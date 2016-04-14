@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang ="en" ng-app = "myApp">
+<head>
+	<meta charset ="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Resistor color-code</title>
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<script src="./js/angular.min.js"></script>
+    <script src="./js/controllers.js"></script>
+	<script src="./js/main.js"></script>
+
+</head>
+
+<body ng-controller="ListController">
+
+  	
+ 
+	<div id="BigWrapper">
+	
+	<p id="text">Resistor color code</p>
+		
+		<figure id="colorFigure">
+			<img src="./img/Color2.png" alt="Resistance_Color"/>
+		</figure>
+		
+		
+	<ul id="bgColor">
+		<li id="firstList" ng-style="myStyle"></li>
+		<li id="secondList" ng-style="myStyle2"></li>
+		<li id="thirdList" ng-style="myStyle3"></li>
+		<li id="forthList" ng-style="myStyle4"></li>
+	</ul>
+	
+	<div id="ListItems" >	
+		<ul>
+			<li>Color</li>
+			<li>Black</li>
+			<li>Brown</li>
+			<li>Red</li>
+			<li>Orange</li>
+			<li>Yellow</li>
+			<li>Green</li>
+			<li>Blue</li>
+			<li>Violet</li>
+			<li>Grey</li>
+			<li>White</li>
+			<li>Gold</li>
+			<li>Silver</li>
+		</ul>
+		
+		<ul>
+			<li>First Digit</li>
+			<li ng-click="myStyle={'background-color':'black'}; value=coding.Black.Significant; setFirst()">Nil</li>
+			<li ng-click="myStyle={'background-color':'brown'}; value=coding.Brown.Significant; setFirst()">1</li>
+			<li ng-click="myStyle={'background-color':'Red'}; value= coding.Red.Significant; setFirst()">2</li>
+			<li ng-click="myStyle={'background-color':'Orange'}; value= coding.Orange.Significant; setFirst()">3</li>
+			<li ng-click="myStyle={'background-color':'Yellow'}; value= coding.Yellow.Significant; setFirst()">4</li>
+			<li ng-click="myStyle={'background-color':'Green'}; value= coding.Green.Significant; setFirst()">5</li>
+			<li ng-click="myStyle={'background-color':'Blue'}; value= coding.Blue.Significant; setFirst()">6</li>
+			<li ng-click="myStyle={'background-color':'Violet'}; value= coding.Violet.Significant; setFirst()">7</li>
+			<li ng-click="myStyle={'background-color':'Grey'}; value= coding.Grey.Significant; setFirst()">8</li>
+			<li ng-click="myStyle={'background-color':'White'}; value= coding.White.Significant; setFirst()">9</li>
+			<li ng-click="myStyle={'background-color':'Gold'}; value= coding.Gold.Significant; setFirst()">Nil</li>
+			<li ng-click="myStyle={'background-color':'Silver'}; value= coding.Silver.Significant; setFirst()">Nil</li>
+		</ul>
+		
+		<ul>
+			<li>Second Digit</li>
+			<li ng-click="myStyle2={'background-color':'black'}; value= coding.Black.Significant; setSecond()">0</li>
+			<li ng-click="myStyle2={'background-color':'brown'}; value=coding.Brown.Significant; setSecond()">1</li>
+			<li ng-click="myStyle2={'background-color':'Red'}; value=coding.Red.Significant; setSecond()">2</li>
+			<li ng-click="myStyle2={'background-color':'Orange'}; value=coding.Orange.Significant; setSecond()">3</li>
+			<li ng-click="myStyle2={'background-color':'Yellow'}; value=coding.Yellow.Significant; setSecond()">4</li>
+			<li ng-click="myStyle2={'background-color':'Green'}; value=coding.Green.Significant; setSecond()">5</li>
+			<li ng-click="myStyle2={'background-color':'Blue'}; value=coding.Blue.Significant; setSecond()">6</li>
+			<li ng-click="myStyle2={'background-color':'Violet'}; value=coding.Violet.Significant; setSecond()">7</li>
+			<li ng-click="myStyle2={'background-color':'Grey'}; value=coding.Grey.Significant; setSecond()">8</li>
+			<li ng-click="myStyle2={'background-color':'White'}; value=coding.White.Significant; setSecond()">9</li>
+			<li ng-click="myStyle2={'background-color':'Gold'}; value=coding.Gold.Significant; setSecond()">Nil</li>
+			<li ng-click="myStyle2={'background-color':'Silver'}; value=coding.Silver.Significant; setSecond()">Nil</li>
+		</ul>
+		
+		<ul>
+			<li>Multiplier</li>
+			<li ng-click="myStyle3={'background-color':'black'}; value= coding.Black.Multiplier; setThird()">1</li>
+			<li ng-click="myStyle3={'background-color':'brown'}; value= coding.Brown.Multiplier; setThird()">10</li>
+			<li ng-click="myStyle3={'background-color':'Red'}; value= coding.Red.Multiplier; setThird()">100</li>
+			<li ng-click="myStyle3={'background-color':'Orange'}; value= coding.Orange.Multiplier; setThird()">1000</li>
+			<li ng-click="myStyle3={'background-color':'Yellow'}; value= coding.Yellow.Multiplier; setThird()">10000</li>
+			<li ng-click="myStyle3={'background-color':'Green'}; value= coding.Green.Multiplier; setThird()">100000</li>
+			<li ng-click="myStyle3={'background-color':'Blue'}; value= coding.Blue.Multiplier; setThird()">1M</li>
+			<li ng-click="myStyle3={'background-color':'Violet'}; value= coding.Violet.Multiplier; setThird()">10M</li>
+			<li ng-click="myStyle3={'background-color':'Grey'}; value= coding.Grey.Multiplier; setThird()">100M</li>
+			<li ng-click="myStyle3={'background-color':'White'}; value= coding.White.Multiplier; setThird()">1G</li>
+			<li ng-click="myStyle3={'background-color':'Gold'}; value= coding.Gold.Multiplier; setThird()">&divide; 10</li>
+			<li ng-click="myStyle3={'background-color':'Silver'}; value= coding.Silver.Multiplier; setThird()">&divide; 100</li>
+		</ul>
+		
+		<ul>
+			<li>Tolerance</li>
+			<li ng-click="myStyle4={'background-color':'black'}; value= coding.Black.Tolerance; setForth()">Nil</li>
+			<li ng-click="myStyle4={'background-color':'brown'}; value= coding.Brown.Tolerance; setForth()">&plusmn; 1%</li>
+			<li ng-click="myStyle4={'background-color':'Red'}; value= coding.Red.Tolerance; setForth()">&plusmn; 2%</li>
+			<li ng-click="myStyle4={'background-color':'Orange'}; value= coding.Orange.Tolerance; setForth()">&plusmn; 3%</li>
+			<li ng-click="myStyle4={'background-color':'Yellow'}; value= coding.Yellow.Tolerance; setForth()">&plusmn; 4%</li>
+			<li ng-click="myStyle4={'background-color':'Green'}; value= coding.Green.Tolerance; setForth()">&plusmn; 0.5%</li>
+			<li ng-click="myStyle4={'background-color':'Blue'}; value= coding.Blue.Tolerance; setForth()">&plusmn; 0.25%</li>
+			<li ng-click="myStyle4={'background-color':'Violet'}; value= coding.Violet.Tolerance; setForth()">&plusmn; 0.10%</li>
+			<li ng-click="myStyle4={'background-color':'Grey'}; value= coding.Grey.Tolerance; setForth()">&plusmn; 0.05%</li>
+			<li ng-click="myStyle4={'background-color':'White'}; value= coding.White.Tolerance; setForth()">Nil</li>
+			<li ng-click="myStyle4={'background-color':'Gold'}; value= coding.Gold.Tolerance; setForth()">&plusmn; 5%</li>
+			<li ng-click="myStyle4={'background-color':'Silver'}; value= coding.Silver.Tolerance; setForth()">&plusmn; 10%</li>
+		</ul>
+		
+	</div>
+	<div id="resultBox">
+	
+			<button id="btn" ng-click="Display()">Submit</button>
+			
+			<section id="result">
+			 {{FinallowerLimit}} - {{FinalloupperLimit}}
+			</section>
+		</div>
+	
+	
+		
+	</div>
+
+	
+
+</body>
+
+</html>
